@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#eaf4fb" />
+  <title>Бизнес Гарант — консалтинг нового поколения</title>
+  <meta name="description" content="Страхование, банковские гарантии, лизинг и кредитование для бизнеса. Бизнес Гарант — консалтинг нового поколения." />
+  <style>
+    :root{
+      --bg:#edf7fd;
+      --bg-2:#f8fcff;
+      --ink:#163d5d;
+      --muted:#547087;
+      --card:#93b3cf;
+      --card-dark:#6e98bb;
+      --white:#fff;
+      --line:rgba(22,61,93,.14);
+      --shadow:0 22px 60px rgba(43,82,113,.12);
+      --radius:28px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.45;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .wrap{width:min(1180px,calc(100% - 36px));margin:0 auto}
+    .topbar{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(14px);
+      background:rgba(237,247,253,.84);
+      border-bottom:1px solid rgba(22,61,93,.08);
+    }
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.02em}
+    .mark{width:38px;height:38px;border:2px solid var(--ink);border-radius:10px;display:grid;place-items:center;font-size:13px;position:relative;overflow:hidden}
+    .mark:before,.mark:after{content:"";position:absolute;width:20px;height:20px;border:2px solid var(--ink)}
+    .mark:before{left:-7px;top:7px}.mark:after{right:-7px;top:7px}
+    .navlinks{display:flex;gap:28px;font-size:14px;font-weight:650;color:#365b77}
+    .navlinks a:hover{color:var(--ink)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:50px;padding:0 22px;border-radius:16px;
+      border:1px solid var(--ink);font-weight:750;transition:.2s ease;
+    }
+    .btn.primary{background:var(--ink);color:#fff;box-shadow:0 12px 28px rgba(22,61,93,.22)}
+    .btn.primary:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(22,61,93,.28)}
+    .btn.ghost:hover{background:rgba(255,255,255,.55)}
+    .hero{padding:86px 0 72px;position:relative;overflow:hidden}
+    .hero:before{
+      content:"";position:absolute;inset:-20% -10% auto auto;width:620px;height:620px;
+      background:radial-gradient(circle,rgba(147,179,207,.36),rgba(147,179,207,0) 68%);
+      pointer-events:none
+    }
+    .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:58px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#52718a}
+    .eyebrow:before{content:"";width:32px;height:2px;background:var(--card-dark)}
+    h1{font-size:clamp(48px,7vw,86px);line-height:.95;letter-spacing:-.055em;margin:22px 0 26px;max-width:830px}
+    .lead{font-size:clamp(19px,2.1vw,27px);line-height:1.25;max-width:760px;color:#375c77;margin:0 0 34px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+    .hero-card{
+      min-height:460px;padding:34px;border-radius:36px;background:linear-gradient(145deg,#8eafcb,#739cbe);
+      box-shadow:var(--shadow);color:white;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end
+    }
+    .hero-card:before{
+      content:"";position:absolute;inset:-8%;
+      background-image:
+       linear-gradient(90deg,transparent 48%,rgba(255,255,255,.12) 49%,rgba(255,255,255,.12) 51%,transparent 52%),
+       linear-gradient(0deg,transparent 48%,rgba(255,255,255,.12) 49%,rgba(255,255,255,.12) 51%,transparent 52%);
+      background-size:72px 72px;transform:rotate(12deg) scale(1.2)
+    }
+    .hero-card .big{font-size:48px;font-weight:850;line-height:1;letter-spacing:-.04em;position:relative}
+    .hero-card p{font-size:19px;margin:16px 0 0;max-width:360px;position:relative;color:rgba(255,255,255,.92)}
+    .badge{position:absolute;top:28px;right:28px;display:inline-flex;padding:10px 14px;border:1px solid rgba(255,255,255,.45);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+    .section{padding:82px 0}
+    .section.light{background:var(--bg-2)}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:36px;margin-bottom:34px}
+    .section-head h2{font-size:clamp(38px,5vw,60px);line-height:1;letter-spacing:-.045em;margin:0;max-width:730px}
+    .section-head p{max-width:430px;margin:0;color:var(--muted);font-size:17px}
+    .services{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .service{
+      background:#fff;border:1px solid var(--line);border-radius:26px;padding:30px;min-height:320px;
+      box-shadow:0 12px 32px rgba(49,87,117,.07);display:flex;flex-direction:column;justify-content:space-between
+    }
+    .num{font-size:13px;font-weight:850;letter-spacing:.15em;color:#6f92ad}
+    .service h3{font-size:32px;line-height:1.05;letter-spacing:-.035em;margin:18px 0 14px}
+    .service p{margin:0 0 20px;color:#567188}
+    .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:auto}
+    .chip{padding:10px 13px;border-radius:999px;background:#e7f0f7;color:#264e6d;font-size:13px;font-weight:700}
+    .feature{
+      background:var(--ink);color:#fff;border-radius:34px;padding:44px;display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center
+    }
+    .feature h2{font-size:clamp(38px,5vw,64px);line-height:1;letter-spacing:-.045em;margin:0}
+    .steps{display:grid;gap:12px}
+    .step{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+    .step:last-child{border-bottom:0}
+    .dot{flex:0 0 34px;height:34px;border-radius:50%;background:#9ab9d2;color:#173d5d;display:grid;place-items:center;font-weight:900;font-size:13px}
+    .step b{display:block;font-size:18px;margin-bottom:4px}
+    .step span{color:rgba(255,255,255,.72)}
+    .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
+    .contact-card{border-radius:30px;padding:36px;background:#fff;border:1px solid var(--line)}
+    .contact-card.alt{background:#8eafcb;color:#fff;border:0}
+    .contact-card h3{font-size:30px;margin:0 0 12px;letter-spacing:-.03em}
+    .person{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:22px 0;border-bottom:1px solid rgba(22,61,93,.12)}
+    .contact-card.alt .person{border-color:rgba(255,255,255,.22)}
+    .person:last-child{border-bottom:0}
+    .person strong{font-size:18px}
+    .person a{font-size:21px;font-weight:800;white-space:nowrap}
+    footer{padding:28px 0 40px;color:#607b90;font-size:13px}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:26px}
+    .mobile-cta{display:none}
+    @media (max-width:900px){
+      .navlinks,.nav>.btn{display:none}
+      .hero{padding-top:54px}
+      .hero-grid,.feature,.contact-grid{grid-template-columns:1fr}
+      .hero-card{min-height:340px}
+      .section{padding:64px 0}
+      .section-head{display:block}
+      .section-head p{margin-top:18px}
+      .services{grid-template-columns:1fr}
+      .mobile-cta{display:inline-flex}
+    }
+    @media (max-width:560px){
+      .wrap{width:min(100% - 24px,1180px)}
+      .nav{height:66px}
+      h1{font-size:48px}
+      .lead{font-size:19px}
+      .hero-card{padding:26px;border-radius:26px}
+      .hero-card .big{font-size:38px}
+      .service,.contact-card{padding:24px;border-radius:22px}
+      .feature{padding:28px;border-radius:24px}
+      .person{align-items:flex-start;flex-direction:column;gap:8px}
+      .footer-row{flex-direction:column}
+    }
+  </style>
+<style>
+.choicebar{background:#173d5d;color:white;text-align:center;padding:10px 16px;font-size:13px}
+.choicebar a{color:white;text-decoration:underline;font-weight:800}
+</style></head>
+<body><div class="choicebar">Вариант 1 · Одностраничный сайт &nbsp;·&nbsp; <a href="/multi.html">Посмотреть вариант 2 — многостраничный →</a></div>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Бизнес Гарант">
+        <span class="mark" aria-hidden="true"></span>
+        <span>Бизнес Гарант</span>
+      </a>
+      <nav class="navlinks" aria-label="Основная навигация">
+        <a href="#services">Услуги</a>
+        <a href="#approach">Как работаем</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a class="btn primary" href="#contacts">Получить консультацию</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Консалтинг нового поколения</div>
+          <h1>Решения для бизнеса без лишней бюрократии</h1>
+          <p class="lead">Страхование, банковские гарантии, лизинг и кредитование — подбираем оптимальные условия и сопровождаем сделку на каждом этапе.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="tel:+79174336102">Позвонить Наталье</a>
+            <a class="btn ghost" href="#services">Смотреть услуги</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Основные направления">
+          <span class="badge">B2B</span>
+          <div class="big">4 направления.<br>1 команда.</div>
+          <p>Финансовые и страховые инструменты, которые помогают бизнесу защищать активы, получать финансирование и сохранять ликвидность.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section light" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Всё необходимое для устойчивого роста бизнеса</h2>
+          <p>Собрали ключевые услуги в одном месте — от защиты имущества и сотрудников до привлечения финансирования.</p>
+        </div>
+
+        <div class="services">
+          <article class="service">
+            <div>
+              <div class="num">01 · СТРАХОВАНИЕ</div>
+              <h3>Защита бизнеса и сотрудников</h3>
+              <p>Подбираем надёжные страховые решения с учётом специфики вашего бизнеса: обязательные и добровольные виды страхования.</p>
+            </div>
+            <div class="chips">
+              <span class="chip">Имущество компаний</span>
+              <span class="chip">ТМЦ</span>
+              <span class="chip">Склады и ангары</span>
+              <span class="chip">Оборудование</span>
+              <span class="chip">ДМС</span>
+              <span class="chip">Несчастные случаи</span>
+            </div>
+          </article>
+
+          <article class="service">
+            <div>
+              <div class="num">02 · БАНКОВСКИЕ ГАРАНТИИ</div>
+              <h3>Гарантии под задачи бизнеса</h3>
+              <p>Помогаем оформить банковские гарантии для участия в тендерах, исполнения контрактов и других обязательств.</p>
+            </div>
+            <div class="chips">
+              <span class="chip">Тендерные</span>
+              <span class="chip">Исполнение контракта</span>
+              <span class="chip">Возврат аванса</span>
+              <span class="chip">Таможенные</span>
+              <span class="chip">Кредитные обязательства</span>
+            </div>
+          </article>
+
+          <article class="service">
+            <div>
+              <div class="num">03 · ЛИЗИНГ</div>
+              <h3>Активы и ликвидность</h3>
+              <p>Лизинг автомобилей, оборудования, спецтехники и коммерческой недвижимости. Возможны возвратный лизинг и обратный выкуп.</p>
+            </div>
+            <div class="chips">
+              <span class="chip">Автомобили</span>
+              <span class="chip">Оборудование</span>
+              <span class="chip">Спецтехника</span>
+              <span class="chip">Недвижимость</span>
+              <span class="chip">Возвратный лизинг</span>
+            </div>
+          </article>
+
+          <article class="service">
+            <div>
+              <div class="num">04 · КРЕДИТОВАНИЕ</div>
+              <h3>Финансирование для развития</h3>
+              <p>Подбираем решения под финансовую модель компании, помогаем подготовить документы и сопровождаем на всех этапах сделки.</p>
+            </div>
+            <div class="chips">
+              <span class="chip">Оборотное кредитование</span>
+              <span class="chip">Инвестиционные кредиты</span>
+              <span class="chip">Кредитные линии</span>
+              <span class="chip">Рефинансирование</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="approach">
+      <div class="wrap">
+        <div class="feature">
+          <div>
+            <div class="eyebrow" style="color:#a8c3d8">Подход</div>
+            <h2>Не просто продукт. Решение под вашу задачу.</h2>
+          </div>
+          <div class="steps">
+            <div class="step"><span class="dot">1</span><div><b>Разбираемся в задаче</b><span>Уточняем цель, ограничения и особенности бизнеса.</span></div></div>
+            <div class="step"><span class="dot">2</span><div><b>Сравниваем варианты</b><span>Подбираем подходящие условия у банков, страховых и финансовых партнёров.</span></div></div>
+            <div class="step"><span class="dot">3</span><div><b>Сопровождаем сделку</b><span>Помогаем с документами и ведём процесс до результата.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light" id="contacts">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Обсудим задачу вашего бизнеса</h2>
+          <p>Для первого шага достаточно короткого звонка: расскажите, что нужно — подскажем, с какого решения начать.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Контакты</h3>
+            <div class="person"><strong>Наталья Третьякова</strong><a href="tel:+79174336102">+7 917 433 61 02</a></div>
+            <div class="person"><strong>Екатерина Агаркова</strong><a href="tel:+79119907196">+7 911 990 71 96</a></div>
+          </div>
+          <div class="contact-card alt">
+            <h3>Бизнес Гарант</h3>
+            <p style="font-size:24px;line-height:1.2;margin:18px 0 28px">Консалтинг нового поколения для предпринимателей и компаний.</p>
+            <a class="btn" style="border-color:#fff;color:#fff" href="tel:+79174336102">Получить консультацию</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© 2026 Бизнес Гарант</span>
+      <span>Страхование · Банковские гарантии · Лизинг · Кредитование</span>
+    </div>
+  </footer>
+</body>
+</html>
