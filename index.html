@@ -7,6 +7,9 @@
   <title>Бизнес Гарант — консалтинг нового поколения</title>
   <meta name="description" content="Страхование, банковские гарантии, лизинг и кредитование для бизнеса. Бизнес Гарант — консалтинг нового поколения." />
   <style>
+    /* 2026 brand refresh */
+    :root{--brand:#243b57;--brand-soft:#e8f4fc;--brand-mid:#94b8d4}
+
     :root{
       --bg:#edf7fd;
       --bg-2:#f8fcff;
@@ -139,21 +142,38 @@
       .person{align-items:flex-start;flex-direction:column;gap:8px}
       .footer-row{flex-direction:column}
     }
+  
+    .brand-official{gap:16px;color:var(--brand);white-space:nowrap}
+    .official-word{font-size:22px;font-weight:800;letter-spacing:-.035em}
+    .official-symbol{width:42px;height:50px;position:relative;display:block;border-right:4px solid var(--brand);border-bottom:4px solid var(--brand)}
+    .official-symbol:before,.official-symbol:after,.official-symbol i:before,.official-symbol i:after{content:"";position:absolute;height:4px;background:var(--brand);left:0}
+    .official-symbol:before{top:7px;width:34px}.official-symbol:after{top:18px;width:25px}
+    .official-symbol i:before{top:29px;width:34px}.official-symbol i:after{top:40px;width:22px}
+    .official-symbol b{position:absolute;left:15px;top:18px;width:4px;height:15px;background:var(--brand)}
+    .support-fab{position:fixed;right:22px;bottom:24px;width:68px;height:68px;border:0;border-radius:50%;background:var(--brand);z-index:50;display:grid;place-items:center;box-shadow:0 14px 32px rgba(36,59,87,.24)}
+    .support-fab svg{width:32px;height:32px;display:block}
+    .modal{position:fixed;inset:0;background:rgba(16,35,53,.5);backdrop-filter:blur(8px);z-index:80;display:none;align-items:center;justify-content:center;padding:18px}
+    .modal.open{display:flex}.modal-card{width:min(520px,100%);background:#fff;border-radius:28px;padding:30px;box-shadow:0 30px 90px rgba(0,0,0,.18);position:relative}
+    .modal-card h2{font-size:34px;line-height:1;margin:0 45px 12px 0}.modal-card p{color:var(--muted);margin:0 0 22px}
+    .modal-close{position:absolute;right:18px;top:16px;border:0;background:#edf5fa;width:42px;height:42px;border-radius:50%;font-size:26px;color:var(--brand)}
+    .field{display:block;margin:12px 0}.field span{display:block;font-size:13px;font-weight:750;margin:0 0 7px}.field input,.field textarea{width:100%;border:1px solid rgba(36,59,87,.18);border-radius:14px;padding:14px 15px;font:inherit;color:var(--brand);background:#f8fbfd}.field textarea{min-height:96px;resize:vertical}
+    .brand-pattern{background-color:var(--brand-soft);background-image:linear-gradient(45deg,rgba(36,59,87,.045) 25%,transparent 25%,transparent 75%,rgba(36,59,87,.045) 75%),linear-gradient(45deg,rgba(36,59,87,.045) 25%,transparent 25%,transparent 75%,rgba(36,59,87,.045) 75%);background-size:36px 36px;background-position:0 0,18px 18px}
+    @media(max-width:560px){.official-word{font-size:19px}.official-symbol{width:36px;height:43px;transform:scale(.88);transform-origin:left center}.brand-official{gap:8px}.support-fab{width:62px;height:62px;right:18px;bottom:20px}}
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="wrap nav">
-      <a class="brand" href="#top" aria-label="Бизнес Гарант">
-        <span class="mark" aria-hidden="true"></span>
-        <span>Бизнес Гарант</span>
+      <a class="brand brand-official" href="#top" aria-label="Бизнес Гарант">
+        <span class="official-symbol" aria-hidden="true"><i></i><b></b></span>
+        <span class="official-word">БИЗНЕС ГАРАНТ</span>
       </a>
       <nav class="navlinks" aria-label="Основная навигация">
         <a href="#services">Услуги</a>
         <a href="#approach">Как работаем</a>
         <a href="#contacts">Контакты</a>
       </nav>
-      <a class="btn primary" href="#contacts">Получить консультацию</a>
+      <a class="btn primary" href="tel:+79174336102">Позвонить</a>
     </div>
   </header>
 
@@ -165,8 +185,8 @@
           <h1>Решения для бизнеса без лишней бюрократии</h1>
           <p class="lead">Страхование, банковские гарантии, лизинг и кредитование — подбираем оптимальные условия и сопровождаем сделку на каждом этапе.</p>
           <div class="hero-actions">
-            <a class="btn primary" href="tel:+79174336102">Позвонить Наталье</a>
-            <a class="btn ghost" href="#services">Смотреть услуги</a>
+            <button class="btn primary js-open-modal" type="button">Получить решение</button>
+            <a class="btn ghost" href="tel:+79174336102">Обсудить задачу с экспертом</a>
           </div>
         </div>
         <aside class="hero-card" aria-label="Основные направления">
@@ -248,7 +268,7 @@
       </div>
     </section>
 
-    <section class="section" id="approach">
+    <section class="section brand-pattern" id="approach">
       <div class="wrap">
         <div class="feature">
           <div>
@@ -286,11 +306,35 @@
     </section>
   </main>
 
+  <a class="support-fab" href="tel:+79174336102" aria-label="Позвонить специалисту">
+    <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M10 26v-4C10 14.3 16.3 8 24 8s14 6.3 14 14v4" stroke="white" stroke-width="3.5" stroke-linecap="round"/><rect x="7" y="23" width="7" height="13" rx="3" stroke="white" stroke-width="3.5"/><rect x="34" y="23" width="7" height="13" rx="3" stroke="white" stroke-width="3.5"/><path d="M38 35c0 4-3 6-8 6h-3" stroke="white" stroke-width="3.5" stroke-linecap="round"/><rect x="23" y="38" width="7" height="5" rx="2.5" fill="white"/></svg>
+  </a>
+  <div class="modal" id="leadModal" role="dialog" aria-modal="true" aria-labelledby="leadTitle">
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="Закрыть">×</button>
+      <h2 id="leadTitle">Получить решение</h2>
+      <p>Оставьте контакты и коротко опишите задачу.</p>
+      <form onsubmit="event.preventDefault();window.location.href='tel:+79174336102'">
+        <label class="field"><span>Имя</span><input name="name" autocomplete="name" required></label>
+        <label class="field"><span>Телефон</span><input name="phone" type="tel" autocomplete="tel" required></label>
+        <label class="field"><span>Задача</span><textarea name="task"></textarea></label>
+        <button class="btn primary" type="submit">Связаться</button>
+      </form>
+    </div>
+  </div>
+
   <footer>
     <div class="wrap footer-row">
       <span>© 2026 Бизнес Гарант</span>
       <span>Страхование · Банковские гарантии · Лизинг · Кредитование</span>
     </div>
   </footer>
+<script>
+  const modal=document.getElementById('leadModal');
+  document.querySelectorAll('.js-open-modal').forEach(b=>b.addEventListener('click',()=>modal.classList.add('open')));
+  modal.querySelector('.modal-close').addEventListener('click',()=>modal.classList.remove('open'));
+  modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('open')});
+</script>
 </body>
 </html>
