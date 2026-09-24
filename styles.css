@@ -20,3 +20,9 @@
 .tile[data-topic="business"]{--tile-img:url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=78')}
 .tile[data-topic="property"]{--tile-img:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=78')}
 @media(max-width:620px){.tile{padding-top:132px}.tile::before{height:108px}.tile::after{top:66px;height:44px}}
+
+
+/* Homepage: keep imagery only in the top hero */
+.taskgrid .tile,.servicegrid .tile{padding-top:28px}
+.taskgrid .tile::before,.taskgrid .tile::after,.servicegrid .tile::before,.servicegrid .tile::after{display:none}
+@media(max-width:620px){.taskgrid .tile,.servicegrid .tile{padding-top:24px}}
