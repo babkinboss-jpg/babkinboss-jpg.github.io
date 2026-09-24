@@ -104,7 +104,7 @@ body:not(.home) .pagehero-photo>.wrap{width:min(1180px,calc(100% - 40px));margin
 @media(max-width:900px){body:not(.home) .pagehero-photo{display:block;min-height:0;padding:64px 0}body:not(.home) .pagehero-photo>.wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}body:not(.home) .pagehero-photo h1{font-size:clamp(42px,12vw,64px);max-width:100%;overflow-wrap:break-word}}
 
 /* Reliable internal hero photos: image layer separate from tint so remote image stays visible */
-body:not(.home) .pagehero-photo{background-image:var(--pagehero-image)!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;position:relative!important}
+body:not(.home) .pagehero-photo{background-image:var(--pagehero-image)!important;background-size:cover!important;background-position:var(--pagehero-position,center)!important;background-repeat:no-repeat!important;position:relative!important}
 body:not(.home) .pagehero-photo::before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(239,247,251,.84) 0%,rgba(239,247,251,.70) 46%,rgba(239,247,251,.20) 100%);pointer-events:none}
 body:not(.home) .pagehero-photo>.wrap{position:relative;z-index:1}
 @media(max-width:900px){body:not(.home) .pagehero-photo::before{background:linear-gradient(180deg,rgba(239,247,251,.80) 0%,rgba(239,247,251,.62) 55%,rgba(239,247,251,.24) 100%)}}
