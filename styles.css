@@ -67,3 +67,27 @@
     text-align:left;
   }
 }
+
+
+/* Compact text-only cards on inner pages. Keep the pale-blue -> white fade,
+   but remove the old image-height spacer and clip every layer to the radius. */
+body:not(.home) .tile{
+  padding:22px 24px 24px;
+  min-height:0;
+  border-radius:22px;
+  overflow:hidden;
+  background:linear-gradient(180deg,#eaf4f9 0%,#f5f9fb 22%,#fff 62%);
+}
+body:not(.home) .tile::before,
+body:not(.home) .tile::after{display:none}
+body:not(.home) .tile h3{margin:8px 0 8px}
+body:not(.home) .tile .arrow{margin-top:16px}
+@media(max-width:620px){
+  body:not(.home) .tile{
+    padding:22px 24px 24px;
+    min-height:0;
+    border-radius:22px;
+    overflow:hidden;
+    background:linear-gradient(180deg,#eaf4f9 0%,#f5f9fb 22%,#fff 62%);
+  }
+}
