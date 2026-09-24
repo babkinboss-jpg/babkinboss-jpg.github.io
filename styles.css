@@ -34,3 +34,20 @@
   .brand,.logo,.site-logo{margin-left:12px;overflow:visible}
   .brand img,.logo img,.site-logo img{object-fit:contain;object-position:center;max-width:100%;height:auto}
 }
+
+
+/* Definitive logo fix: SVG viewBox includes the complete source mark.
+   Previous CSS spacing could not restore geometry cropped by the SVG viewport. */
+.brand svg{
+  width:54px;
+  height:72px;
+  flex:0 0 54px;
+  overflow:visible;
+}
+@media (min-width:901px){
+  .nav{padding-left:10px}
+  .brand{margin-left:0}
+}
+@media (max-width:620px){
+  .brand svg{width:44px;height:62px;flex-basis:44px}
+}
