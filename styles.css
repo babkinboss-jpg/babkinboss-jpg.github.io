@@ -108,3 +108,12 @@ body:not(.home) .pagehero-photo{background-image:var(--pagehero-image)!important
 body:not(.home) .pagehero-photo::before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(239,247,251,.84) 0%,rgba(239,247,251,.70) 46%,rgba(239,247,251,.20) 100%);pointer-events:none}
 body:not(.home) .pagehero-photo>.wrap{position:relative;z-index:1}
 @media(max-width:900px){body:not(.home) .pagehero-photo::before{background:linear-gradient(180deg,rgba(239,247,251,.80) 0%,rgba(239,247,251,.62) 55%,rgba(239,247,251,.24) 100%)}}
+
+/* Home hero quick cards — compact glass treatment */
+.hero .quick{gap:14px;margin-top:48px}
+.hero .quick a{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:118px;padding:22px 24px;background:linear-gradient(135deg,rgba(255,255,255,.78),rgba(232,243,249,.58));border:1px solid rgba(255,255,255,.72);box-shadow:0 12px 34px rgba(25,55,79,.10);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);overflow:hidden}
+.hero .quick a:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.32),transparent 55%);pointer-events:none}
+.hero .quick h3{position:relative;margin:0;font-size:20px;line-height:1.12;max-width:190px}
+.hero .quick .quickArrow{position:relative;margin-top:18px;font-size:12px;font-weight:800;color:#55758c;opacity:.9}
+.hero .quick a:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(25,55,79,.15);border-color:rgba(255,255,255,.95)}
+@media(max-width:760px){.hero .quick a{min-height:100px;padding:18px}.hero .quick h3{font-size:18px}.hero .quick .quickArrow{margin-top:12px}}
