@@ -7,6 +7,8 @@
 .phonePopover.show{display:block}.phonePopover span{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#7890a3;font-weight:800;margin-bottom:3px}.phonePopover strong{font-size:18px}
 @media(max-width:900px){.phonePopover{display:none!important}}
 .hero .quick a{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(238,247,252,.94),rgba(255,255,255,.84));border:1px solid rgba(78,118,146,.16);box-shadow:0 12px 32px rgba(32,56,79,.08);min-height:156px;padding:24px 24px 20px;display:flex;flex-direction:column}.hero .quick a:before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,#87abc3,rgba(135,171,195,0))}.hero .quick h3{margin:0;font-size:20px}.hero .quick p{margin:10px 0 18px;color:#607b90;font-size:14px;line-height:1.45}.hero .quickArrow{margin-top:auto;font-size:13px;font-weight:850;color:#294967;opacity:.82}.hero .quick a:hover{background:linear-gradient(145deg,#e7f3f9,#fff);box-shadow:0 16px 38px rgba(32,56,79,.13)}
+
+@media (max-width: 700px){.hero .quick{display:none!important}}
 </style><script>
 const phonePopover=document.getElementById('phonePopover');
 document.querySelectorAll('.phoneTrigger').forEach(a=>a.addEventListener('click',e=>{if(window.matchMedia('(min-width:901px)').matches){e.preventDefault();phonePopover.classList.toggle('show')}}));
