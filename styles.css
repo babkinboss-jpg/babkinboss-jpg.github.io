@@ -26,3 +26,11 @@
 .taskgrid .tile,.servicegrid .tile{padding-top:28px}
 .taskgrid .tile::before,.taskgrid .tile::after,.servicegrid .tile::before,.servicegrid .tile::after{display:none}
 @media(max-width:620px){.taskgrid .tile,.servicegrid .tile{padding-top:24px}}
+
+
+/* Header logo desktop alignment fix: keep the full mark visible */
+@media (min-width: 900px){
+  .header-inner{padding-left:32px}
+  .brand,.logo,.site-logo{margin-left:12px;overflow:visible}
+  .brand img,.logo img,.site-logo img{object-fit:contain;object-position:center;max-width:100%;height:auto}
+}
