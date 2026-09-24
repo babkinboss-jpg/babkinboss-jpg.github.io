@@ -2,13 +2,13 @@
 /* Topic-card imagery */
 .tile{position:relative;overflow:hidden;padding-top:152px;transition:transform .22s ease,box-shadow .22s ease}
 .tile:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(32,56,79,.09)}
-.tile::before{content:"";position:absolute;left:0;right:0;top:0;height:124px;background-image:var(--tile-img,linear-gradient(135deg,#dfeef6,#f4f9fc));background-size:cover;background-position:center;filter:saturate(.78);transition:transform .35s ease}
+.tile::before{content:"";position:absolute;left:0;right:0;top:0;height:124px;background-image:var(--tile-img,linear-gradient(135deg,#dfeef6,#f4f9fc));background-size:cover;background-position:center;filter:blur(1.2px) saturate(.72);transition:transform .35s ease}
 .tile::after{content:"";position:absolute;left:0;right:0;top:78px;height:48px;background:linear-gradient(180deg,transparent,#fff)}
 .tile:hover::before{transform:scale(1.035)}
 .tile>*{position:relative;z-index:1}
-.tile[data-topic="insurance"]{--tile-img:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=78')}
-.tile[data-topic="guarantee"]{--tile-img:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=78')}
-.tile[data-topic="credit"]{--tile-img:url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=78')}
+.tile[data-topic="insurance"]{--tile-img:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=78')}
+.tile[data-topic="guarantee"]{--tile-img:url('https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=900&q=78')}
+.tile[data-topic="credit"]{--tile-img:url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=900&q=78')}
 .tile[data-topic="leasing"]{--tile-img:url('https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?auto=format&fit=crop&w=900&q=78')}
 .tile[data-topic="factoring"]{--tile-img:url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=900&q=78')}
 .tile[data-topic="banking"]{--tile-img:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=78')}
