@@ -263,3 +263,8 @@ a.tile{text-decoration:none;color:inherit}
 @media(max-width:900px){.headerSocial{margin-left:auto;margin-right:8px}.headerSocial a{width:27px;height:27px;font-size:9px}}
 @media(max-width:620px){.headerSocial{gap:3px}.headerSocial a{width:24px;height:24px;font-size:8px}}
 @media(min-width:901px) and (max-height:800px){.home .hero{padding-top:12px;padding-bottom:12px}.home .hero h1{font-size:clamp(38px,4.5vw,56px)}.home .hero .quick{margin-top:15px}.home .hero .quick a{min-height:108px;padding:11px 13px}}
+
+/* Five equal service cards on the desktop homepage */
+@media(min-width:1101px){.home .hero .quick{grid-template-columns:repeat(5,minmax(0,1fr))}.home .hero .quick a{min-width:0;padding:14px 12px;min-height:130px}.home .hero .quick h3{font-size:clamp(14px,1.3vw,18px);overflow-wrap:anywhere}.home .hero .quick p{font-size:12px;line-height:1.35}}
+@media(min-width:701px) and (max-width:1100px){.home .hero .quick{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.consentCheck{display:flex;align-items:flex-start;gap:10px;margin:14px 0 10px;font-size:13px;line-height:1.45;color:#3a5368;cursor:pointer}.consentCheck input{width:18px;height:18px;flex:0 0 18px;margin:1px 0 0;accent-color:#294967;cursor:pointer}.consentCheck span{flex:1}
