@@ -416,3 +416,33 @@ a.tile{text-decoration:none;color:inherit}
  .home .requisitesItem.wide{grid-column:auto}
  .contactMethod{padding:20px}
 }
+
+/* Compact numbered-card cleanup: numbering removed from content, tighter approved tiles. */
+body:not(.home) .contentgrid .tile,
+body:not(.home) .taskgrid .tile{
+  min-height:0;
+  padding:18px 21px 20px;
+}
+body:not(.home) .contentgrid .tile h3,
+body:not(.home) .taskgrid .tile h3{
+  margin:0 0 8px;
+  font-size:clamp(19px,2vw,22px);
+  line-height:1.2;
+}
+body:not(.home) .contentgrid .tile p,
+body:not(.home) .taskgrid .tile p{font-size:14px;line-height:1.45}
+body:not(.home) .taskgrid,
+body:not(.home) .contentgrid{gap:12px}
+.home .approach-section .step{min-height:0;padding:18px 22px}
+.home .approach-section .step h3{margin:4px 0 7px}
+.home .approach-section .step p{line-height:1.45}
+.home .approach-section .steps{gap:12px}
+.home .mobile-directions .tile{min-height:0;padding:18px 21px}
+.home .why-section .case{min-height:0;padding:20px 23px}
+@media(max-width:700px){
+  body:not(.home) .contentgrid .tile,
+  body:not(.home) .taskgrid .tile{padding:17px 19px 18px}
+  .home .approach-section .step{padding:18px 20px}
+  .home .mobile-directions .tile{padding:18px 20px}
+  .home .why-section .case{padding:19px 21px}
+}
