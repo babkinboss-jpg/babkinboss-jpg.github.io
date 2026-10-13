@@ -558,3 +558,32 @@ body:not(.home) .contentgrid{gap:12px}
  .home .unified-benefits .steps{margin-top:12px}
  .home .unified-benefits .step{padding:17px 20px}
 }
+
+
+/* FinKontur floating phone: brief, quiet attention cue every 18 seconds.
+   Respect reduced-motion settings; don't distract during interaction. */
+@keyframes finPhoneAttentionRing{
+  0%, 5.8%, 100% { transform:translateX(0) rotate(0deg); }
+  0.7% { transform:translateX(-2px) rotate(-9deg); }
+  1.4% { transform:translateX(2px) rotate(9deg); }
+  2.1% { transform:translateX(-2px) rotate(-8deg); }
+  2.8% { transform:translateX(2px) rotate(8deg); }
+  3.5% { transform:translateX(-1px) rotate(-5deg); }
+  4.2% { transform:translateX(1px) rotate(5deg); }
+  4.9% { transform:translateX(0) rotate(0deg); }
+}
+.float.phoneTrigger{
+  transform-origin:center center;
+  animation:finPhoneAttentionRing 18s ease-in-out infinite;
+}
+.float.phoneTrigger:hover,
+.float.phoneTrigger:focus-visible{
+  animation:none;
+  transform:none;
+}
+@media(prefers-reduced-motion:reduce){
+  .float.phoneTrigger{
+    animation:none!important;
+    transform:none!important;
+  }
+}
