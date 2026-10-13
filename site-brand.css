@@ -166,3 +166,28 @@ body:not(.home) textarea:focus-visible{
 @media(prefers-reduced-motion:reduce){
  body:not(.home) .sitehead .headerSocial a{transition:none}
 }
+
+/* Unified compact footer, matching the approved homepage. */
+body:not(.home) .footer{
+  padding:23px 0;
+  background:#27374D;
+  border-top:0;
+}
+body:not(.home) .footer .wrap.foot{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  flex-wrap:nowrap;
+  gap:0;
+}
+body:not(.home) .footerLinks{
+  display:flex;justify-content:flex-end;align-items:center;
+  gap:26px;flex-wrap:wrap;margin:0;
+  font-size:13px;font-weight:500;
+}
+body:not(.home) .footerLinks a{color:#E9F6FF;white-space:nowrap}
+@media(max-width:620px){
+  body:not(.home) .footer{padding:24px 0}
+  body:not(.home) .footer .wrap.foot{justify-content:flex-end}
+  body:not(.home) .footerLinks{gap:12px 20px;margin:0}
+}
