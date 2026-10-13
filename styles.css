@@ -343,8 +343,10 @@ a.tile{text-decoration:none;color:inherit}
 .home main{background:#fff}
 .home main>.section{border-top:0}
 .home .brand-section::before{display:none!important;content:none!important}
-.home main>.mobile-directions,.home main>.approach-section,.home main>.home-requisites{background:#fff}
-.home main>.why-section,.home main>.home-partners{background:#edf7fc}
+.home main>.mobile-directions,.home main>.approach-section{background:#fff}
+.home main>.why-section{background:#edf7fc}
+.home main>.home-partners{background:#fff}
+.home main>.home-requisites{background:#f3f8fb}
 .home .mobile-directions .tile,
 .home .mobile-directions .tile:nth-child(2),
 .home .home-cases .case,
