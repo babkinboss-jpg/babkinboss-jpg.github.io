@@ -1,23 +1,31 @@
+/* Onest is the sole corporate typeface specified in the approved style guide. */
+@font-face{font-family:"Onest";font-weight:100 900;font-style:normal;font-display:swap;
+src:url("https://cdn.jsdelivr.net/npm/@fontsource-variable/onest@5.3.1/files/onest-cyrillic-wght-normal.woff2") format("woff2");
+unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Onest";font-weight:100 900;font-style:normal;font-display:swap;
+src:url("https://cdn.jsdelivr.net/npm/@fontsource-variable/onest@5.3.1/files/onest-latin-wght-normal.woff2") format("woff2");
+unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
 /* FINКОНТУР — premium homepage design system.
    This file intentionally affects body.home only; inner pages keep styles.css.
    Layout targets: 1440–1920 desktops, 1024 laptop, 768 tablet, 320–430 mobile. */
 .home{
-  --hp-ink:#20384f;
-  --hp-navy:#263f5c;
-  --hp-muted:#63798a;
-  --hp-blue:#edf7fc;
-  --hp-ice:#f3f8fb;
-  --hp-border:rgba(38,63,92,.12);
+  --hp-ink:#27374D;
+  --hp-navy:#27374D;
+  --hp-muted:#304B68;
+  --hp-blue:#E9F6FF;
+  --hp-ice:#F5FBFF;
+  --hp-border:rgba(39,55,77,.12);
   --hp-ease:cubic-bezier(.22,1,.36,1);
 }
 .home .wrap{max-width:1180px}
-.home .sitehead{box-shadow:0 4px 24px rgba(30,54,77,.035);border-bottom-color:rgba(38,63,92,.085)}
+.home .sitehead{box-shadow:0 4px 24px rgba(39,55,77,.035);border-bottom-color:rgba(39,55,77,.085)}
 .home .sitehead .links a{transition:color .2s ease}
-.home .sitehead .links a:hover{color:#587f9b}
+.home .sitehead .links a:hover{color:#304B68}
 .home .sitehead .headerSocial a{transition:transform .25s var(--hp-ease),filter .25s ease}
 .home .sitehead .headerSocial a:hover{transform:translateY(-2px);filter:saturate(1.12)}
 .home .headerConsult{transition:background .2s ease,box-shadow .2s ease}
-.home .headerConsult:hover{box-shadow:0 5px 16px rgba(38,63,92,.10)}
+.home .headerConsult:hover{box-shadow:0 5px 16px rgba(39,55,77,.10)}
 
 /* Hero: preserve the approved architecture photo, but integrate text and services. */
 .home .hero{
@@ -37,19 +45,19 @@
   display:flex;align-items:center;gap:11px;
   margin:0 0 12px;
   font-size:10px;font-weight:850;line-height:1.2;
-  letter-spacing:.15em;text-transform:uppercase;color:#5b809b;
+  letter-spacing:.15em;text-transform:uppercase;color:#304B68;
 }
-.home .hero-eyebrow::before{content:"";width:26px;height:2px;flex:none;background:#789cb6}
+.home .hero-eyebrow::before{content:"";width:26px;height:2px;flex:none;background:#8FAFCC}
 .home .hero h1{
   max-width:740px;
   margin:0 0 12px;
   font-size:clamp(45px,4.75vw,67px);
   line-height:1.025;
   letter-spacing:-.058em;
-  color:#1f374f;
+  color:#27374D;
   text-wrap:balance;
 }
-.home .hero .lead{max-width:610px;font-size:clamp(15px,1.24vw,17px);line-height:1.5;color:#49677e}
+.home .hero .lead{max-width:610px;font-size:clamp(15px,1.24vw,17px);line-height:1.5;color:#304B68}
 .home .hero .actions{display:flex;align-items:center;gap:11px;margin-top:18px}
 .home .hero .actions .btn{
   min-height:43px;
@@ -61,10 +69,10 @@
   box-shadow:none;
   transition:transform .2s var(--hp-ease),background .2s ease,box-shadow .2s ease;
 }
-.home .hero .actions .btn:first-child{box-shadow:0 7px 20px rgba(30,54,77,.15)}
-.home .hero .actions .btn.ghost{background:rgba(255,255,255,.72);border-color:rgba(38,63,92,.56);color:var(--hp-navy)}
+.home .hero .actions .btn:first-child{box-shadow:0 7px 20px rgba(39,55,77,.15)}
+.home .hero .actions .btn.ghost{background:rgba(255,255,255,.72);border-color:rgba(39,55,77,.56);color:var(--hp-navy)}
 .home .hero .actions .btn:hover{transform:translateY(-2px)}
-.home .hero .actions .btn:first-child:hover{box-shadow:0 12px 24px rgba(30,54,77,.19)}
+.home .hero .actions .btn:first-child:hover{box-shadow:0 12px 24px rgba(39,55,77,.19)}
 .home .hero .quick{
   display:grid;
   grid-template-columns:repeat(5,minmax(0,1fr));
@@ -83,20 +91,20 @@
   border:1px solid rgba(255,255,255,.88);
   border-radius:14px;
   background:linear-gradient(160deg,rgba(255,255,255,.96),rgba(248,251,253,.89));
-  box-shadow:0 8px 23px rgba(25,55,79,.085);
+  box-shadow:0 8px 23px rgba(39,55,77,.085);
   backdrop-filter:blur(9px);
   -webkit-backdrop-filter:blur(9px);
   transition:transform .24s var(--hp-ease),box-shadow .24s ease,border-color .24s ease;
 }
 .home .hero .quick a::before{
   content:"";position:absolute;inset:0 auto auto 0;width:100%;height:2px;
-  background:linear-gradient(90deg,#719dbb,rgba(113,157,187,0));
+  background:linear-gradient(90deg,#8FAFCC,rgba(113,157,187,0));
   pointer-events:none;
 }
 .home .hero .quick h3{margin:0;font-size:clamp(15px,1.18vw,18px);line-height:1.18;letter-spacing:-.027em;font-weight:800;color:var(--hp-ink)}
-.home .hero .quick p{margin:8px 0 12px;font-size:12px;line-height:1.38;color:#617c8f}
-.home .hero .quick .quickArrow{display:block;margin-top:auto;font-size:11px;font-weight:800;color:#385c77;opacity:1}
-.home .hero .quick a:hover{transform:translateY(-3px);box-shadow:0 16px 30px rgba(25,55,79,.13);border-color:rgba(124,165,191,.55)}
+.home .hero .quick p{margin:8px 0 12px;font-size:12px;line-height:1.38;color:#304B68}
+.home .hero .quick .quickArrow{display:block;margin-top:auto;font-size:11px;font-weight:800;color:#304B68;opacity:1}
+.home .hero .quick a:hover{transform:translateY(-3px);box-shadow:0 16px 30px rgba(39,55,77,.13);border-color:rgba(124,165,191,.55)}
 
 /* The three service directions get a clear hierarchy and one coherent grid. */
 .home main>.mobile-directions{padding:29px 0 38px;background:#fff}
@@ -119,23 +127,23 @@
   min-height:156px;
   padding:19px 22px 18px;
   color:var(--hp-navy);
-  background:linear-gradient(160deg,#f8fbfd,#fff 78%);
+  background:linear-gradient(160deg,#F5FBFF,#fff 78%);
   border:1px solid var(--hp-border);
   border-radius:15px;
   box-shadow:none;
   transition:transform .2s var(--hp-ease),box-shadow .2s ease,border-color .2s ease;
 }
 .home .mobile-directions .tile::before,.home .mobile-directions .tile::after{display:none}
-.home .mobile-directions .tile .num{font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#7799af}
+.home .mobile-directions .tile .num{font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#304B68}
 .home .mobile-directions .tile h3{font-size:clamp(19px,1.8vw,23px);line-height:1.14;margin:8px 0 7px;letter-spacing:-.035em}
 .home .mobile-directions .tile p,.home .mobile-directions .tile:nth-child(2) p{margin:0;color:var(--hp-muted);font-size:13px;line-height:1.42}
-.home .mobile-directions .tile .arrow,.home .mobile-directions .tile:nth-child(2) .arrow{margin-top:auto;padding-top:11px;font-size:12px;font-weight:800;color:#345d7b}
+.home .mobile-directions .tile .arrow,.home .mobile-directions .tile:nth-child(2) .arrow{margin-top:auto;padding-top:11px;font-size:12px;font-weight:800;color:#304B68}
 .home .mobile-directions .tile:hover{transform:translateY(-3px);border-color:rgba(69,117,151,.35);box-shadow:0 10px 26px rgba(26,55,78,.07)}
 
 /* The two advantages and the three stages are one composed section. */
 .home main>.unified-benefits{
   padding:65px 0 69px;
-  background:linear-gradient(160deg,#eff8fc 0%,#eaf4fa 100%);
+  background:linear-gradient(160deg,#E9F6FF 0%,#E9F6FF 100%);
 }
 .home .unified-benefits .head{display:block;max-width:none;margin-bottom:26px}
 .home .unified-benefits .head h2{max-width:900px;font-size:clamp(38px,4.2vw,59px);letter-spacing:-.058em;line-height:1.07;text-wrap:balance}
@@ -145,10 +153,10 @@
   position:relative;min-height:156px;
   padding:26px 29px;
   background:#fff;color:var(--hp-ink);
-  border:1px solid rgba(38,63,92,.09);border-radius:16px;
-  box-shadow:0 7px 23px rgba(23,58,82,.035);
+  border:1px solid rgba(39,55,77,.09);border-radius:16px;
+  box-shadow:0 7px 23px rgba(39,55,77,.035);
 }
-.home .unified-benefits .case::before{content:"";position:absolute;left:28px;top:0;width:56px;height:2px;background:#8aacbf}
+.home .unified-benefits .case::before{content:"";position:absolute;left:28px;top:0;width:56px;height:2px;background:#8FAFCC}
 .home .unified-benefits .case h3{max-width:450px;margin:0 0 12px;font-size:clamp(22px,2.2vw,29px);font-weight:800;line-height:1.18;letter-spacing:-.043em}
 .home .unified-benefits .case p{margin:0;max-width:480px;font-size:15px;line-height:1.56;color:var(--hp-muted)}
 .home .unified-benefits .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px;overflow:visible;background:none;border:0}
@@ -156,7 +164,7 @@
   min-height:101px;
   padding:20px 23px;
   background:rgba(255,255,255,.8);
-  border:1px solid rgba(38,63,92,.09);
+  border:1px solid rgba(39,55,77,.09);
   border-radius:14px;
   box-shadow:none;
 }
@@ -180,7 +188,7 @@
 }
 .home .home-partners .wrap::after{
   content:"";display:block;width:100%;height:1px;
-  margin-top:30px;background:linear-gradient(90deg,rgba(38,63,92,.17),rgba(38,63,92,0));
+  margin-top:30px;background:linear-gradient(90deg,rgba(39,55,77,.17),rgba(39,55,77,0));
 }
 
 /* Open editorial treatment for legal data: no white card and no indent. */
@@ -190,23 +198,23 @@
 .home .requisitesCard{margin:0;padding:0;background:none;border:0;box-shadow:none}
 .home .requisitesCard h3{font-size:clamp(18px,1.8vw,22px);line-height:1.36;letter-spacing:-.025em;margin:0 0 23px}
 .home .requisitesList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 34px;margin:0}
-.home .requisitesItem{padding-top:11px;border-top:1px solid rgba(38,63,92,.14);min-width:0}
+.home .requisitesItem{padding-top:11px;border-top:1px solid rgba(39,55,77,.14);min-width:0}
 .home .requisitesItem.wide{grid-column:1/-1}
-.home .requisitesItem dt{font-size:10px;letter-spacing:.13em;font-weight:850;text-transform:uppercase;color:#7c9aad;margin:0 0 5px}
+.home .requisitesItem dt{font-size:10px;letter-spacing:.13em;font-weight:850;text-transform:uppercase;color:#304B68;margin:0 0 5px}
 .home .requisitesItem dd{font-size:14px;line-height:1.5;overflow-wrap:anywhere;margin:0;color:#34526a}
-.home .requisitesItem dd a{text-decoration:underline;text-underline-offset:4px;text-decoration-color:#b9c9d5}
+.home .requisitesItem dd a{text-decoration:underline;text-underline-offset:4px;text-decoration-color:#8FAFCC}
 
 /* The agreed simple footer stays navy with only three right-aligned links. */
-.home .footer{padding:23px 0;background:#263f5c}
+.home .footer{padding:23px 0;background:#27374D}
 .home .foot{display:flex;justify-content:flex-end;align-items:center}
 .home .footerLinks{display:flex;justify-content:flex-end;align-items:center;gap:26px;margin:0}
-.home .footerLinks a{color:#edf6fc;font-size:13px;font-weight:700;transition:opacity .2s ease}
+.home .footerLinks a{color:#E9F6FF;font-size:13px;font-weight:700;transition:opacity .2s ease}
 .home .footerLinks a:hover{opacity:.7}
 
 /* Accessible focus and restrained interaction. */
 .home .hero a:focus-visible,.home .hero button:focus-visible,
 .home .mobile-directions a:focus-visible,.home .footer a:focus-visible,
-.home .sitehead a:focus-visible{outline:3px solid #6d9dbe;outline-offset:3px}
+.home .sitehead a:focus-visible{outline:3px solid #8FAFCC;outline-offset:3px}
 
 @media(min-width:901px) and (max-height:790px){
   .home .hero{padding-top:17px;padding-bottom:16px}
@@ -301,4 +309,162 @@
 }
 @media(prefers-reduced-motion:reduce){
   .home .hero .quick a,.home .mobile-directions .tile,.home .hero .actions .btn{transition:none}
+}
+
+/* BRAND-GUIDED DESIGN REFINEMENT v2
+   References: guide pp. 12 (colors), 14 (Onest), 19 (rounded plaque shapes).
+   Shared contents, photos, links, and approved section order are unchanged. */
+.home{
+ --navy:#27374D;--ink:#27374D;--sky:#8FAFCC;
+ --pale:#F5FBFF;--muted:#304B68;--line:rgba(39,55,77,.13);
+ --hp-ink:#27374D;--hp-navy:#27374D;
+ --hp-blue:#E9F6FF;--hp-ice:#F5FBFF;--hp-mid:#8FAFCC;
+ --hp-muted:#304B68;--hp-border:rgba(39,55,77,.13);
+ color:#27374D;
+ font-family:"Onest",Arial,sans-serif;font-size:16px;font-weight:400;
+ font-synthesis:none;font-optical-sizing:auto;
+}
+.home h1,.home h2,.home h3,.home .brandname{font-family:"Onest",Arial,sans-serif;font-weight:700}
+.home .sitehead{background:rgba(255,255,255,.96);border-bottom:1px solid rgba(39,55,77,.08)}
+.home .sitehead .links{font-weight:500}
+.home .sitehead .nav{min-height:78px}
+.home .brandname{letter-spacing:-.035em}
+.home .headerConsult{color:#27374D}
+.home .hero{padding:22px 0 21px}
+.home .hero h1{
+ max-width:700px;font-size:clamp(44px,4.65vw,64px);
+ font-weight:700;line-height:1.04;letter-spacing:-.045em;
+ text-wrap:balance;margin:0 0 13px;
+}
+.home .hero-eyebrow{color:#304B68;font-weight:700;letter-spacing:.10em}
+.home .hero-eyebrow::before{background:#8FAFCC}
+.home .hero .lead{color:#304B68;font-size:clamp(15px,1.18vw,17px);max-width:620px}
+.home .hero .actions{margin-top:18px}
+.home .hero .actions .btn{
+ min-height:44px;padding:11px 20px;
+ border-radius:999px;font-weight:700;font-size:13px;
+}
+.home .hero .quick{gap:11px;margin-top:20px}
+.home .hero .quick a{
+ min-height:128px;padding:16px 17px 15px;
+ border-radius:16px;
+ background:linear-gradient(155deg,rgba(255,255,255,.98),rgba(245,251,255,.92));
+ border:1px solid rgba(39,55,77,.11);
+ box-shadow:0 9px 27px rgba(39,55,77,.075);
+}
+.home .hero .quick a::before{background:linear-gradient(90deg,#8FAFCC,rgba(143,175,204,0))}
+.home .hero .quick h3{font-weight:700;letter-spacing:-.025em}
+.home .hero .quick p{color:#304B68}
+.home .hero .quick .quickArrow{color:#304B68;font-weight:700}
+.home main>.mobile-directions{padding:27px 0 35px;background:#fff}
+.home .mobile-directions .head{margin-bottom:17px}
+.home .mobile-directions .head h2{
+ font-weight:700;letter-spacing:-.045em;line-height:1.08;
+ font-size:clamp(34px,3.22vw,44px)
+}
+.home .mobile-directions .servicegrid{gap:13px}
+.home .mobile-directions .tile,
+.home .mobile-directions .tile:nth-child(2){
+ min-height:147px;padding:19px 23px 18px;border-radius:18px;
+ background:linear-gradient(145deg,#F5FBFF 0%,#fff 85%);
+ border:1px solid rgba(39,55,77,.13);
+ box-shadow:0 2px 0 rgba(39,55,77,.025)
+}
+.home .mobile-directions .tile h3{font-weight:700;letter-spacing:-.027em}
+.home .mobile-directions .tile .arrow{font-weight:700}
+.home main>.unified-benefits{
+ padding:59px 0 63px;background:linear-gradient(145deg,#F5FBFF,#E9F6FF)
+}
+.home .unified-benefits .head{margin-bottom:26px}
+.home .unified-benefits .head h2{
+ font-size:clamp(37px,4.1vw,57px);
+ font-weight:700;line-height:1.08;letter-spacing:-.045em
+}
+.home .unified-benefits .casegrid{gap:15px}
+.home .unified-benefits .case{
+ min-height:170px;padding:28px 30px;border-radius:18px;
+ color:#fff;background:#27374D;border:1px solid #27374D;
+ box-shadow:0 13px 32px rgba(39,55,77,.10)
+}
+.home .unified-benefits .case:nth-child(2){
+ color:#27374D;background:#fff;border:1px solid rgba(39,55,77,.13);
+ box-shadow:0 5px 20px rgba(39,55,77,.035)
+}
+.home .unified-benefits .case::before{left:30px;width:58px;height:3px;background:#8FAFCC}
+.home .unified-benefits .case:first-child h3{color:#fff}
+.home .unified-benefits .case:first-child p{color:#E9F6FF}
+.home .unified-benefits .case h3{font-weight:700;font-size:clamp(22px,2vw,28px);letter-spacing:-.032em}
+.home .unified-benefits .case p{line-height:1.55}
+.home .unified-benefits .steps{gap:13px;margin-top:15px}
+.home .unified-benefits .step{
+ min-height:104px;border-radius:16px;padding:21px 23px;
+ background:rgba(255,255,255,.85);
+ border:1px solid rgba(39,55,77,.13)
+}
+.home .unified-benefits .step h3{font-weight:700;letter-spacing:-.02em}
+.home .unified-benefits .step p{color:#304B68}
+.home main>.home-partners{padding:54px 0 44px;min-height:188px;background:#fff}
+.home .home-partners .head h2{font-weight:700;letter-spacing:-.045em}
+.home .home-partners .partnerNames{color:#304B68}
+.home .home-partners .wrap::after{
+ margin-top:24px;
+ background:linear-gradient(90deg,rgba(39,55,77,.16),rgba(39,55,77,0))
+}
+.home main>.home-requisites{padding:49px 0 54px;background:#F5FBFF}
+.home .home-requisites .head h2{font-weight:700;letter-spacing:-.045em}
+.home .requisitesCard{margin-left:0;padding-left:0}
+.home .requisitesCard h3{font-weight:700;letter-spacing:-.012em}
+.home .requisitesItem{border-top:1px solid rgba(39,55,77,.14)}
+.home .requisitesItem dt{color:#304B68;font-weight:700}
+.home .requisitesItem dd{color:#304B68;font-size:14px;line-height:1.55}
+.home .footer{background:#27374D}
+.home .footerLinks a{font-weight:500;color:#E9F6FF}
+.home .hero a:focus-visible,.home .sitehead a:focus-visible,
+.home .mobile-directions a:focus-visible,.home .footer a:focus-visible{
+ outline:3px solid #8FAFCC;outline-offset:3px
+}
+@media(min-width:901px) and (max-height:790px){
+ .home .hero{padding-top:16px;padding-bottom:16px}
+ .home .hero h1{font-size:clamp(42px,4.4vw,59px)}
+ .home .hero .quick{margin-top:15px}
+ .home .hero .quick a{min-height:114px;padding:12px 15px}
+ .home main>.mobile-directions{padding:22px 0 28px}
+ .home .mobile-directions .head{margin-bottom:14px}
+ .home .mobile-directions .tile,.home .mobile-directions .tile:nth-child(2){
+   min-height:130px;padding:16px 19px
+ }
+}
+@media(max-width:900px){
+ .home .sitehead .nav{min-height:72px}
+ .home .hero{padding:35px 0 33px}
+ .home .hero h1{font-size:clamp(40px,6.5vw,58px)}
+ .home .hero .quick a{min-height:137px}
+ .home main>.mobile-directions{padding:44px 0 49px}
+ .home .mobile-directions .tile,.home .mobile-directions .tile:nth-child(2){
+   min-height:168px;padding:20px
+ }
+ .home main>.unified-benefits{padding:52px 0 55px}
+ .home main>.home-partners{padding:48px 0;min-height:175px}
+ .home main>.home-requisites{padding:48px 0 50px}
+}
+@media(max-width:700px){
+ .home .hero{padding:31px 0 32px}
+ .home .hero h1{font-size:clamp(38px,9vw,47px)}
+ .home .hero .actions .btn{font-size:14px;min-height:48px}
+ .home .hero .quick{margin-top:26px}
+ .home .hero .quick a{min-height:133px}
+ .home main>.mobile-directions{padding:45px 0 52px}
+ .home .mobile-directions .tile,.home .mobile-directions .tile:nth-child(2){
+   min-height:0;padding:22px
+ }
+ .home .unified-benefits .case{min-height:0;padding:24px 23px}
+ .home .unified-benefits .case:nth-child(2){min-height:0}
+ .home .unified-benefits .case h3{font-size:23px}
+ .home main>.home-partners{min-height:155px;padding:42px 0}
+ .home main>.home-requisites{padding:44px 0 48px}
+ .home .requisitesList{gap:17px}
+ .home .requisitesItem dd{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){
+ .home .sitehead .headerSocial a,.home .unified-benefits .case{transition:none}
 }
