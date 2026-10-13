@@ -9,7 +9,7 @@
   overlay.hidden=true;
   overlay.innerHTML=
     '<div class="phoneConfirmPanel" role="dialog" aria-modal="true" aria-label="Звонок эксперту">'+
-    '<div class="phoneConfirmLabel">Телефон для связи</div>'+
+    '<div class="phoneConfirmLabel">Позвонить эксперту</div>'+
     '<div class="phoneConfirmNumber">8 (966) 88-77-812</div>'+
     '<a class="phoneConfirmCall" href="tel:+79668877812">Позвонить</a>'+
     '<button class="phoneConfirmCancel" type="button">Отмена</button>'+
