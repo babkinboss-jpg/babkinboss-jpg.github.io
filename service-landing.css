@@ -1,0 +1,152 @@
+/* FinKontur landing pages: one image-led, brand-guided full-height screen.
+   Dedicated to approved service landing layouts; all other pages untouched. */
+body.service-landing{
+  min-height:100vh;
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  --navy:#27374D;
+  --ink:#27374D;
+  --pale:#F5FBFF;
+  --muted:#304B68;
+}
+body.service-landing main{
+  display:flex;
+  flex:1 0 auto;
+  flex-direction:column;
+  min-width:0;
+}
+body.service-landing .pagehero.pagehero-photo{
+  display:flex!important;
+  flex:1 0 auto;
+  align-items:center;
+  box-sizing:border-box;
+  min-height:calc(100vh - 151px)!important;
+  min-height:calc(100svh - 151px)!important;
+  padding:clamp(64px,8vh,108px) 0!important;
+  background-color:#F5FBFF!important;
+  background-position:var(--pagehero-position,center)!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+  isolation:isolate;
+}
+body.service-landing .pagehero.pagehero-photo::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:linear-gradient(
+     90deg,
+     rgba(245,251,255,.99) 0%,
+     rgba(245,251,255,.975) 22%,
+     rgba(245,251,255,.94) 38%,
+     rgba(245,251,255,.78) 57%,
+     rgba(245,251,255,.29) 81%,
+     rgba(245,251,255,.08) 100%
+  )!important;
+}
+body.service-landing .pagehero.pagehero-photo>.wrap{
+  position:relative;
+  z-index:1;
+  width:min(1180px,calc(100% - 40px));
+  margin:0 auto;
+}
+body.service-landing .landing-copy{
+  max-width:700px;
+}
+body.service-landing .landing-copy h1{
+  max-width:740px;
+  margin:0 0 22px;
+  color:#27374D;
+  font-family:"Onest",Arial,sans-serif;
+  font-size:clamp(47px,5.05vw,74px);
+  font-weight:700;
+  line-height:1.03;
+  letter-spacing:-.048em;
+  text-wrap:balance;
+}
+body.service-landing .landing-copy .actions{
+  display:flex;
+  align-items:center;
+  margin:0 0 26px;
+  gap:12px;
+}
+body.service-landing .landing-copy .actions .btn{
+  border:1px solid #27374D;
+  border-radius:999px;
+  background:#27374D;
+  color:#fff;
+  min-height:48px;
+  padding:12px 23px;
+  font-weight:700;
+  font-size:14px;
+  transition:transform .2s ease,box-shadow .2s ease;
+  box-shadow:0 8px 22px rgba(39,55,77,.14);
+}
+body.service-landing .landing-copy .actions .btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 26px rgba(39,55,77,.20);
+}
+body.service-landing .landing-description{
+  max-width:630px;
+  padding:0;
+  margin:0;
+  color:#304B68;
+  font-family:"Onest",Arial,sans-serif;
+}
+body.service-landing .landing-description p{
+  max-width:630px;
+  padding:0;
+  margin:0 0 13px;
+  font-size:clamp(16px,1.28vw,18px);
+  line-height:1.65;
+}
+body.service-landing .landing-description p:last-child{margin-bottom:0}
+body.service-landing .footer{flex:0 0 auto}
+@media(max-width:900px){
+  body.service-landing .pagehero.pagehero-photo{
+    min-height:calc(100svh - 137px)!important;
+    padding:65px 0 74px!important;
+  }
+  body.service-landing .pagehero.pagehero-photo::before{
+    background:linear-gradient(
+      100deg,
+      rgba(245,251,255,.99) 0%,
+      rgba(245,251,255,.96) 36%,
+      rgba(245,251,255,.80) 70%,
+      rgba(245,251,255,.38) 100%
+    )!important;
+  }
+  body.service-landing .landing-copy{max-width:660px}
+  body.service-landing .landing-copy h1{font-size:clamp(43px,6.6vw,64px)}
+}
+@media(max-width:620px){
+  body.service-landing .pagehero.pagehero-photo{
+    min-height:calc(100svh - 120px)!important;
+    padding:58px 0 68px!important;
+    align-items:center;
+  }
+  body.service-landing .pagehero.pagehero-photo>.wrap{width:calc(100% - 32px)}
+  body.service-landing .pagehero.pagehero-photo::before{
+    background:linear-gradient(
+      180deg,
+      rgba(245,251,255,.99) 0%,
+      rgba(245,251,255,.96) 45%,
+      rgba(245,251,255,.82) 75%,
+      rgba(245,251,255,.50) 100%
+    )!important;
+  }
+  body.service-landing .landing-copy h1{
+    font-size:clamp(37px,9.4vw,49px);
+    line-height:1.06;
+    margin-bottom:20px;
+    overflow-wrap:break-word;
+  }
+  body.service-landing .landing-copy .actions{margin-bottom:22px}
+  body.service-landing .landing-copy .actions .btn{min-height:48px}
+  body.service-landing .landing-description p{font-size:15px;line-height:1.62}
+}
+@media(prefers-reduced-motion:reduce){
+  body.service-landing .landing-copy .actions .btn{transition:none}
+}
