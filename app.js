@@ -59,3 +59,33 @@
   },true);
 })();
 
+
+/* Keep the floating telephone outside the navy footer on every page.
+   Its offset tracks the footer's viewport position while scrolling. */
+(()=>{
+  const phone=document.querySelector('.float.phoneTrigger');
+  const footer=document.querySelector('footer.footer');
+  if(!phone||!footer)return;
+  const baseBottom=22;
+  const gapAboveFooter=16;
+  let scheduled=false;
+  const positionPhone=()=>{
+    scheduled=false;
+    const footerTop=footer.getBoundingClientRect().top;
+    const overlap=window.innerHeight-footerTop;
+    const bottom=Math.max(baseBottom,Math.ceil(overlap+gapAboveFooter));
+    phone.style.setProperty('--fin-phone-bottom',bottom+'px');
+  };
+  const schedule=()=>{
+    if(scheduled)return;
+    scheduled=true;
+    window.requestAnimationFrame(positionPhone);
+  };
+  window.addEventListener('scroll',schedule,{passive:true});
+  window.addEventListener('resize',schedule,{passive:true});
+  if(window.visualViewport){
+    window.visualViewport.addEventListener('resize',schedule,{passive:true});
+    window.visualViewport.addEventListener('scroll',schedule,{passive:true});
+  }
+  schedule();
+})();
