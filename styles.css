@@ -339,3 +339,45 @@ a.tile{text-decoration:none;color:inherit}
 .phonePopover strong a:hover{text-decoration:underline}
 .phonePopover strong a:focus-visible{outline:2px solid #91b2ce;outline-offset:3px}
 
+/* Homepage reference review: one light surface, quieter dividers, no checkerboard. */
+.home main{background:var(--pale)}
+.home main>.section{background:var(--pale);border-top:1px solid rgba(38,63,92,.09)}
+.home .brand-section::before{display:none!important;content:none!important}
+.home .mobile-directions,.home .home-cases,.home .approach-section,.home .home-partners,.home .home-requisites{background:var(--pale)}
+.home .mobile-directions .tile,
+.home .mobile-directions .tile:nth-child(2),
+.home .home-cases .case,
+.home .home-cases .case:nth-child(2){background:#fff;color:var(--navy);border:1px solid rgba(38,63,92,.12);box-shadow:0 8px 24px rgba(32,56,79,.045)}
+.home .mobile-directions .tile:nth-child(2) p,
+.home .mobile-directions .tile:nth-child(2) .num,
+.home .mobile-directions .tile:nth-child(2) .arrow{color:var(--muted)}
+.home .why-section .casegrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.home .why-section .head{margin-bottom:26px}
+.home .why-section .case{min-height:0;padding:26px 28px}
+.home .why-section .case h3{margin:0 0 12px;font-size:24px}
+.home .why-section .case p{font-size:15px;line-height:1.55}
+.home .approach-section .head p{color:var(--muted)}
+.home .approach-section .steps{background:transparent;gap:14px;overflow:visible;border:0;border-radius:0}
+.home .approach-section .step{background:#fff;border:1px solid rgba(38,63,92,.12);border-radius:20px;padding:28px;min-height:0}
+.home .approach-section .step:nth-child(2){background:#fff}
+.home .approach-section .step .num{color:#87a2b5}
+.home .approach-section .step h3{margin:10px 0;font-size:21px}
+.home .approach-section .step p{margin:0;color:var(--muted)}
+.home .partnerSlots{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.home .partnerSlot{min-height:100px;background:rgba(255,255,255,.75);border:1px solid rgba(38,63,92,.12);border-radius:18px}
+.home .requisitesPending{background:#fff;border:1px solid rgba(38,63,92,.12);border-radius:18px;padding:24px 28px;color:var(--muted);font-size:15px}
+.home .footer{background:#1f354a;border-top:0;padding:28px 0}
+.home .foot{display:flex;justify-content:center;align-items:center}
+.home .footerLinks{display:flex;justify-content:center;gap:clamp(22px,5vw,64px);flex-wrap:wrap;margin:0}
+.home .footerLinks a{color:#fff}
+@media(max-width:700px){
+  .home .why-section .casegrid,.home .approach-section .steps{display:grid;grid-template-columns:1fr;gap:12px}
+  .home .why-section .case{padding:22px 24px}
+  .home .why-section .case h3{font-size:22px}
+  .home .approach-section .step{padding:22px 24px}
+  .home .partnerSlots{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .home .partnerSlot{min-height:86px}
+  .home .requisitesPending{padding:20px 22px}
+  .home .footerLinks{margin:0;gap:14px 24px}
+}
+
