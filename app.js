@@ -36,3 +36,26 @@
     if(event.key==='Escape'&&!overlay.hidden)close();
   });
 })();
+
+/* FinKontur header telephone popover alignment */
+(()=>{
+  const pop=document.getElementById('phonePopover');
+  if(!pop)return;
+  const label=pop.querySelector('span');
+  if(label)label.textContent='Телефон для консультации';
+  const number=pop.querySelector('strong');
+  if(number){
+    const dial=document.createElement('a');
+    dial.href='tel:+79668877812';
+    dial.textContent='8 (966) 88-77-812';
+    dial.setAttribute('aria-label','Позвонить 8 (966) 88-77-812');
+    number.replaceChildren(dial);
+  }
+  document.addEventListener('click',event=>{
+    if(!window.matchMedia('(min-width:901px)').matches)return;
+    const target=event.target;
+    const trigger=target instanceof Element?target.closest('.phoneTrigger'):null;
+    if(trigger)pop.classList.toggle('fromHeader',trigger.classList.contains('headerConsult'));
+  },true);
+})();
+

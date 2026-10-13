@@ -317,3 +317,25 @@ a.tile{text-decoration:none;color:inherit}
 .phoneConfirmCall{background:var(--navy);border:1px solid var(--navy);color:#fff;margin-bottom:10px}
 .phoneConfirmCancel{background:#edf5f9;border:1px solid var(--line);color:var(--navy)}
 .phoneConfirmCall:focus-visible,.phoneConfirmCancel:focus-visible{outline:3px solid #91b2ce;outline-offset:3px}
+
+/* FinKontur header contact alignment — matching the existing navy and light-blue design. */
+@media(min-width:901px){
+  .sitehead .nav{justify-content:flex-start;gap:clamp(8px,1vw,14px)}
+  .sitehead .headerSocial{margin-left:auto;margin-right:0;gap:8px}
+  .sitehead .headerSocial a{width:34px;height:34px}
+  .sitehead .headerConsult{margin-left:4px;min-height:36px;justify-content:center}
+  .phonePopover.fromHeader{top:76px;bottom:auto;right:max(20px,calc((100vw - 1180px)/2))}
+}
+@media(min-width:901px) and (max-width:1060px){
+  .sitehead .nav{gap:7px}
+  .sitehead .brand svg{width:34px;height:46px;flex-basis:34px}
+  .sitehead .brandname{font-size:16px}
+  .sitehead .links{gap:7px;font-size:12px}
+  .sitehead .headerSocial{gap:5px}
+  .sitehead .headerSocial a{width:29px;height:29px}
+  .sitehead .headerConsult{font-size:11px;padding:7px 8px;margin-left:0}
+}
+.phonePopover strong a{color:inherit;text-decoration:none}
+.phonePopover strong a:hover{text-decoration:underline}
+.phonePopover strong a:focus-visible{outline:2px solid #91b2ce;outline-offset:3px}
+
