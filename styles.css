@@ -277,3 +277,32 @@ a.tile{text-decoration:none;color:inherit}
 @media(min-width:901px){.sitehead .nav{gap:clamp(7px,1vw,13px)}.sitehead .links{gap:clamp(8px,1vw,16px)}.sitehead .brandname{font-size:18px}.sitehead .headerSocial a{width:30px;height:30px}}
 @media(max-width:900px){.sitehead .headerSocial{margin-left:auto;margin-right:4px;gap:4px}.sitehead .headerConsult{padding:7px;border-radius:50%}.sitehead .headerConsult span{display:none}.sitehead .headerConsult svg{width:20px;height:20px}}
 @media(max-width:430px){.sitehead .headerSocial a{width:26px;height:26px;padding:5px}.sitehead .headerConsult{padding:5px}.sitehead .headerConsult svg{width:19px;height:19px}}
+
+
+/* Mobile header fit: logo, messengers, consultation and menu remain in one row */
+@media(max-width:900px){
+  .sitehead .nav{gap:8px}
+  .sitehead .brand{gap:6px;min-width:0;flex:0 1 auto}
+  .sitehead .headerSocial{margin-left:auto;margin-right:0}
+  .sitehead .menuToggle{width:40px;height:40px;flex:0 0 40px;padding:9px}
+}
+@media(max-width:430px){
+  .sitehead .nav{gap:5px;min-height:70px}
+  .sitehead .brand{gap:5px}
+  .sitehead .brand svg{width:32px;height:45px;flex:0 0 32px}
+  .sitehead .brandname{font-size:clamp(12px,3.5vw,15px);white-space:nowrap}
+  .sitehead .headerSocial{gap:3px}
+  .sitehead .headerSocial a{width:26px;height:26px;padding:5px;flex:0 0 26px}
+  .sitehead .headerConsult{width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;padding:5px}
+  .sitehead .headerConsult svg{width:19px;height:19px}
+  .sitehead .menuToggle{width:36px;height:36px;flex:0 0 36px;padding:8px}
+  .sitehead .menuToggle span{margin:3px 0}
+}
+@media(max-width:350px){
+  .sitehead .nav{gap:3px}
+  .sitehead .brand svg{width:28px;height:40px;flex-basis:28px}
+  .sitehead .brandname{font-size:12px}
+  .sitehead .headerSocial a{width:23px;height:23px;flex-basis:23px;padding:4px}
+  .sitehead .headerConsult{width:27px;height:27px;flex-basis:27px;padding:4px}
+  .sitehead .menuToggle{width:34px;height:34px;flex-basis:34px;padding:7px}
+}
