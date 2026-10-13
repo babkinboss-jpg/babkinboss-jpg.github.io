@@ -1,0 +1,175 @@
+/* FinKontur — full-height crisp photo contacts and open partner details.
+   Page-specific extension, brand guide palette + Onest. */
+body.contacts-page{
+  --navy:#27374D;--ink:#27374D;--muted:#304B68;
+  min-height:100vh;min-height:100svh;
+  display:flex;flex-direction:column;
+  font-family:"Onest",Arial,sans-serif;
+}
+body.contacts-page main{flex:1 0 auto}
+body.contacts-page .contacts-photo{
+  position:relative;
+  isolation:isolate;
+  min-height:calc(100svh - 140px);
+  padding:49px 0 64px;
+  background-color:#E9F6FF;
+  background-image:
+    linear-gradient(90deg,
+      rgba(245,251,255,.53) 0%,
+      rgba(245,251,255,.35) 45%,
+      rgba(245,251,255,.13) 100%),
+    var(--contacts-image);
+  background-size:cover,cover;
+  background-position:center,center 40%;
+  background-repeat:no-repeat;
+}
+body.contacts-page .contacts-photo>.wrap{
+  position:relative;z-index:1;max-width:1180px;
+}
+body.contacts-page .contacts-intro{max-width:830px;margin-bottom:32px}
+body.contacts-page .contacts-intro h1{
+  margin:0 0 14px;
+  color:#27374D;
+  font-family:"Onest",Arial,sans-serif;
+  font-size:clamp(44px,5vw,65px);
+  font-weight:700;
+  line-height:1.06;
+  letter-spacing:-.045em;
+}
+body.contacts-page .contacts-intro p{
+  max-width:670px;
+  margin:0;
+  font-size:clamp(16px,1.35vw,19px);
+  line-height:1.55;
+  color:#27374D;
+  font-weight:500;
+}
+body.contacts-page .contacts-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:13px;
+}
+body.contacts-page .contacts-channel{
+  min-width:0;
+  scroll-margin-top:110px;
+  padding:20px 24px;
+  min-height:105px;
+  border-radius:16px;
+  border:1px solid rgba(39,55,77,.16);
+  background:rgba(255,255,255,.91);
+  box-shadow:0 4px 15px rgba(39,55,77,.055);
+}
+body.contacts-page .contacts-channel--email{
+  grid-column:1/-1;min-height:0;
+}
+body.contacts-page .contacts-channel h2{
+  margin:0 0 7px;
+  color:#27374D;
+  font-size:17px;
+  font-weight:700;
+  line-height:1.27;
+  letter-spacing:-.017em;
+}
+body.contacts-page .contacts-channel a,
+body.contacts-page .contacts-channel strong{
+  font-size:clamp(16px,1.45vw,19px);
+  line-height:1.4;
+  font-weight:700;
+  color:#27374D;
+  overflow-wrap:anywhere;
+}
+body.contacts-page .contacts-channel a{
+  text-decoration:underline;
+  text-decoration-color:#8FAFCC;
+  text-underline-offset:4px;
+}
+body.contacts-page .contacts-channel a:hover{text-decoration-color:#27374D}
+body.contacts-page .contacts-channel p{
+  margin:7px 0 0;
+  color:#304B68;
+  font-size:13px;
+  line-height:1.45;
+}
+body.contacts-page .partner-section{
+  background:#fff;
+  padding:62px 0 76px;
+}
+body.contacts-page .partner-section h2{
+  margin:0 0 32px;
+  color:#27374D;
+  font-size:clamp(36px,3.65vw,49px);
+  line-height:1.11;
+  letter-spacing:-.045em;
+  font-weight:700;
+}
+body.contacts-page .partner-details{
+  margin:0;max-width:1050px;
+  border-top:1px solid rgba(39,55,77,.16);
+}
+body.contacts-page .partner-detail{
+  display:grid;
+  grid-template-columns:minmax(180px,270px) minmax(0,1fr);
+  column-gap:28px;
+  row-gap:9px;
+  padding:19px 0;
+  border-bottom:1px solid rgba(39,55,77,.14);
+  align-items:start;
+}
+body.contacts-page .partner-detail dt{
+  margin:3px 0 0;
+  color:#304B68;
+  font-size:11px;
+  line-height:1.5;
+  font-weight:700;
+  letter-spacing:.095em;
+  text-transform:uppercase;
+}
+body.contacts-page .partner-detail dd{
+  margin:0;
+  color:#27374D;
+  font-size:clamp(15px,1.23vw,17px);
+  line-height:1.55;
+  font-weight:500;
+  overflow-wrap:anywhere;
+}
+body.contacts-page .partner-detail dd a{
+  color:inherit;text-decoration:underline;
+  text-decoration-color:#8FAFCC;text-underline-offset:4px;
+}
+body.contacts-page .partner-detail dd a:hover{text-decoration-color:#27374D}
+body.contacts-page a:focus-visible{
+  outline:3px solid #8FAFCC;outline-offset:4px;
+}
+body.contacts-page .footer{flex:0 0 auto}
+@media(max-width:900px){
+  body.contacts-page .contacts-photo{min-height:auto;padding:48px 0 57px}
+  body.contacts-page .contacts-photo{
+    background-image:
+      linear-gradient(110deg,rgba(245,251,255,.61),rgba(245,251,255,.27)),
+      var(--contacts-image);
+    background-position:center,63% center;
+  }
+  body.contacts-page .partner-section{padding:54px 0 63px}
+}
+@media(max-width:620px){
+  body.contacts-page .contacts-photo{
+    padding:42px 0 54px;
+    background-image:
+      linear-gradient(180deg,rgba(245,251,255,.66),rgba(245,251,255,.32)),
+      var(--contacts-image);
+    background-position:center,64% center;
+  }
+  body.contacts-page .contacts-intro{margin-bottom:26px}
+  body.contacts-page .contacts-intro h1{font-size:clamp(36px,9.5vw,46px)}
+  body.contacts-page .contacts-intro p{font-size:15px}
+  body.contacts-page .contacts-grid{grid-template-columns:1fr;gap:10px}
+  body.contacts-page .contacts-channel{min-height:0;padding:17px 19px}
+  body.contacts-page .contacts-channel--email{grid-column:auto}
+  body.contacts-page .contacts-channel h2{font-size:17px}
+  body.contacts-page .contacts-channel a,body.contacts-page .contacts-channel strong{font-size:17px}
+  body.contacts-page .partner-section{padding:45px 0 56px}
+  body.contacts-page .partner-section h2{margin-bottom:24px;font-size:36px}
+  body.contacts-page .partner-detail{grid-template-columns:1fr;gap:7px;padding:16px 0}
+  body.contacts-page .partner-detail dt{margin:0}
+  body.contacts-page .partner-detail dd{font-size:15px}
+}
