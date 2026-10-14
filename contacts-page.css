@@ -173,3 +173,136 @@ body.contacts-page .footer{flex:0 0 auto}
   body.contacts-page .partner-detail dt{margin:0}
   body.contacts-page .partner-detail dd{font-size:15px}
 }
+
+/* Mobile only: make the Contacts photo and Partner Card each one screen.
+   Preserve every contact method and legal field; desktop remains unchanged.
+   Let very short screens expand naturally rather than clipping essential data. */
+@media (max-width:620px){
+  body.contacts-page{
+    --contacts-mobile-header:79px;
+  }
+  body.contacts-page .contacts-photo,
+  body.contacts-page .partner-section{
+    box-sizing:border-box;
+    min-height:calc(100vh - var(--contacts-mobile-header));
+    min-height:calc(100svh - var(--contacts-mobile-header));
+    display:flex;
+    align-items:center;
+    scroll-margin-top:var(--contacts-mobile-header);
+  }
+  body.contacts-page .contacts-photo{
+    padding:clamp(15px,2.3svh,23px) 0;
+  }
+  body.contacts-page .contacts-photo>.wrap,
+  body.contacts-page .partner-section>.wrap{
+    width:calc(100% - 32px);
+    max-width:100%;
+  }
+  body.contacts-page .contacts-intro{
+    margin:0 0 clamp(13px,2svh,20px);
+  }
+  body.contacts-page .contacts-intro h1{
+    font-size:clamp(30px,8vw,37px);
+    line-height:1.07;
+    margin:0 0 8px;
+  }
+  body.contacts-page .contacts-intro p{
+    max-width:420px;
+    font-size:13px;
+    line-height:1.4;
+    font-weight:500;
+  }
+  body.contacts-page .contacts-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:9px;
+  }
+  body.contacts-page .contacts-channel{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:clamp(11px,1.8svh,16px) 12px;
+    min-width:0;
+    min-height:0;
+    border-radius:13px;
+  }
+  body.contacts-page .contacts-channel--email{
+    grid-column:1 / -1;
+    padding-right:78px;
+  }
+  body.contacts-page .contacts-channel h2{
+    margin:0 0 6px;
+    font-size:clamp(12px,3.4vw,15px);
+    line-height:1.22;
+  }
+  body.contacts-page .contacts-channel a,
+  body.contacts-page .contacts-channel strong{
+    font-size:clamp(13px,3.7vw,16px);
+    line-height:1.36;
+    overflow-wrap:anywhere;
+  }
+  body.contacts-page .contacts-channel p{
+    display:none;
+  }
+  body.contacts-page .partner-section{
+    padding:clamp(15px,2.6svh,25px) 0;
+  }
+  body.contacts-page .partner-section h2{
+    margin:0 0 clamp(12px,2svh,20px);
+    font-size:clamp(29px,7.5vw,36px);
+    line-height:1.12;
+  }
+  body.contacts-page .partner-details{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:0 12px;
+    border-top:1px solid rgba(39,55,77,.16);
+    max-width:none;
+  }
+  body.contacts-page .partner-detail{
+    display:block;
+    min-width:0;
+    padding:clamp(7px,1.25svh,11px) 0;
+    border-bottom:1px solid rgba(39,55,77,.14);
+  }
+  body.contacts-page .partner-detail:nth-child(1),
+  body.contacts-page .partner-detail:nth-child(4),
+  body.contacts-page .partner-detail:nth-child(5),
+  body.contacts-page .partner-detail:nth-child(8){
+    grid-column:1/-1;
+  }
+  body.contacts-page .partner-detail dt{
+    margin:0 0 3px;
+    font-size:clamp(9px,2.5vw,10px);
+    line-height:1.25;
+    letter-spacing:.055em;
+  }
+  body.contacts-page .partner-detail dd{
+    margin:0;
+    font-size:clamp(12px,3.25vw,14px);
+    line-height:1.38;
+    font-weight:500;
+    overflow-wrap:anywhere;
+  }
+}
+@media (max-width:360px){
+  body.contacts-page .contacts-channel{padding-left:9px;padding-right:9px}
+  body.contacts-page .contacts-channel h2{font-size:12px}
+  body.contacts-page .contacts-channel a,
+  body.contacts-page .contacts-channel strong{font-size:12.5px}
+  body.contacts-page .contacts-channel--email{padding-right:73px}
+  body.contacts-page .partner-detail dd{font-size:12px}
+}
+@media (max-width:620px) and (max-height:700px){
+  body.contacts-page .contacts-photo{padding:12px 0}
+  body.contacts-page .contacts-intro{margin-bottom:11px}
+  body.contacts-page .contacts-intro h1{font-size:30px}
+  body.contacts-page .contacts-intro p{font-size:12px;line-height:1.33}
+  body.contacts-page .contacts-grid{gap:7px}
+  body.contacts-page .contacts-channel{padding-top:9px;padding-bottom:9px}
+  body.contacts-page .contacts-channel h2{margin-bottom:4px}
+  body.contacts-page .partner-section{padding:12px 0}
+  body.contacts-page .partner-section h2{font-size:29px;margin-bottom:10px}
+  body.contacts-page .partner-detail{padding:6px 0}
+  body.contacts-page .partner-detail dd{line-height:1.32}
+}
