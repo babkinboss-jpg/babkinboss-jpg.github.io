@@ -588,18 +588,17 @@ body:not(.home) .contentgrid{gap:12px}
     transform:none!important;
   }
 }
-/* Official MAX app icon, from max.ru (not an improvised letter M).
-   Preserve existing header spacing on mobile and desktop. */
+/* Match the circular WhatsApp and Telegram buttons while keeping the MAX mark. */
 .sitehead .headerSocial .socialMax{
   background:transparent!important;
   padding:0!important;
-  border-radius:24%;
+  border-radius:50%!important;
   overflow:hidden;
 }
 .sitehead .headerSocial .socialMax img{
   display:block;
   width:100%;
   height:100%;
-  object-fit:cover;
-  border-radius:24%;
+  object-fit:contain;
+  border-radius:50%;
 }
