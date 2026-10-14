@@ -637,3 +637,7 @@ body:not(.home) .contentgrid{gap:12px}
 /* Brighter photo on financial solutions page, keeping headings legible */
 .pagehero-photo[style*='--pagehero-overlay']{background-image:var(--pagehero-overlay),var(--pagehero-image)}
 @media(max-width:900px){.pagehero-photo[style*='--pagehero-mobile-overlay']{background-image:var(--pagehero-mobile-overlay),var(--pagehero-image)}}
+
+/* Consistent corporate heading typography across every viewport. */
+.hero h1,.pagehero h1,.pagehero-photo h1,.head h2{font-family:"Onest",Arial,sans-serif!important;font-weight:750!important;font-style:normal!important;font-synthesis:none;letter-spacing:-.045em}
+@media(max-width:900px){.pagehero h1,.pagehero-photo h1{font-size:clamp(42px,10vw,64px);line-height:1.06;letter-spacing:-.045em}}
