@@ -172,3 +172,21 @@ body.services-catalog .service-entry:focus-visible{
   body.services-catalog .service-entry,
   body.services-catalog .service-entry__more span{transition:none}
 }
+
+/* fin-catalog-cta-pair: phone call versus written calculation request. */
+body.services-catalog .catalog-actions{
+  display:flex;flex-wrap:wrap;align-items:center;gap:12px;
+}
+body.services-catalog .catalog-actions .btn.ghost{
+  background:rgba(255,255,255,.85);
+  border-color:#27374D;
+  color:#27374D;
+}
+@media(max-width:700px){
+  body.services-catalog .catalog-actions{
+    display:flex;flex-direction:column;align-items:stretch;
+  }
+  body.services-catalog .catalog-actions .btn{
+    width:100%;min-height:48px;text-align:center;white-space:normal;
+  }
+}
