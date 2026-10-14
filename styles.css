@@ -602,3 +602,8 @@ body:not(.home) .contentgrid{gap:12px}
   object-fit:contain;
   border-radius:50%;
 }
+
+/* Optical alignment: Telegram paper plane sits slightly high-left in its circle. */
+.sitehead .headerSocial .socialTelegram svg{
+  transform:translate(-0.8px,-0.8px);
+}
