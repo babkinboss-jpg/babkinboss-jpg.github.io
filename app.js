@@ -37,10 +37,13 @@
   });
 })();
 
-/* FinKontur header telephone popover alignment */
+/* Position the single phone popover beside the exact desktop button that was clicked.
+   "Discuss a task" and header Consultation open directly underneath themselves;
+   the floating phone keeps its popover beside the floating button. */
 (()=>{
   const pop=document.getElementById('phonePopover');
   if(!pop)return;
+  const desktop=window.matchMedia('(min-width:901px)');
   const label=pop.querySelector('span');
   if(label)label.textContent='Телефон';
   const number=pop.querySelector('strong');
@@ -51,14 +54,66 @@
     dial.setAttribute('aria-label','Позвонить 8 (966) 88-77-812');
     number.replaceChildren(dial);
   }
-  document.addEventListener('click',event=>{
-    if(!window.matchMedia('(min-width:901px)').matches)return;
-    const target=event.target;
-    const trigger=target instanceof Element?target.closest('.phoneTrigger'):null;
-    if(trigger)pop.classList.toggle('fromHeader',trigger.classList.contains('headerConsult'));
-  },true);
-})();
 
+  let anchor=null;
+  let queued=false;
+  const place=()=>{
+    queued=false;
+    if(!desktop.matches||!pop.classList.contains('show')||!anchor||!anchor.isConnected)return;
+    // Avoid legacy fixed placement for the Consultation button.
+    pop.classList.remove('fromHeader');
+    const rect=anchor.getBoundingClientRect();
+    const popup=pop.getBoundingClientRect();
+    const width=popup.width||240;
+    const height=popup.height||84;
+    const inset=12, gap=10;
+    const viewportWidth=document.documentElement.clientWidth;
+    const viewportHeight=window.innerHeight;
+    const clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
+
+    let left,top;
+    if(anchor.classList.contains('float')){
+      // Floating phone: popover to the left, and never on top of the footer.
+      left=rect.left-width-gap;
+      top=rect.top+(rect.height-height)/2;
+      if(left<inset)left=rect.right+gap;
+    }else{
+      // Header "Консультация" and page "Обсудить задачу": directly below button.
+      left=rect.left+(rect.width-width)/2;
+      top=rect.bottom+gap;
+      if(top+height>viewportHeight-inset && rect.top-height-gap>=inset){
+        top=rect.top-height-gap;
+      }
+    }
+    pop.style.left=clamp(left,inset,Math.max(inset,viewportWidth-width-inset))+'px';
+    pop.style.top=clamp(top,inset,Math.max(inset,viewportHeight-height-inset))+'px';
+    pop.style.right='auto';
+    pop.style.bottom='auto';
+  };
+  const schedule=()=>{
+    if(queued)return;
+    queued=true;
+    window.requestAnimationFrame(place);
+  };
+
+  // Inline page handlers toggle visibility on bubble; measure the visible
+  // popover after they finish, before the browser paints the next frame.
+  document.addEventListener('click',event=>{
+    if(!desktop.matches)return;
+    const target=event.target;
+    const trigger=target instanceof Element?target.closest('a.phoneTrigger'):null;
+    if(!trigger)return;
+    anchor=trigger;
+    schedule();
+  },true);
+
+  window.addEventListener('scroll',schedule,{passive:true});
+  window.addEventListener('resize',schedule,{passive:true});
+  if(window.visualViewport){
+    window.visualViewport.addEventListener('resize',schedule,{passive:true});
+    window.visualViewport.addEventListener('scroll',schedule,{passive:true});
+  }
+})();
 
 /* Keep the floating telephone outside the navy footer on every page.
    Its offset tracks the footer's viewport position while scrolling. */
