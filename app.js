@@ -42,7 +42,7 @@
   const pop=document.getElementById('phonePopover');
   if(!pop)return;
   const label=pop.querySelector('span');
-  if(label)label.textContent='Телефон для консультации';
+  if(label)label.textContent='Телефон';
   const number=pop.querySelector('strong');
   if(number){
     const dial=document.createElement('a');
