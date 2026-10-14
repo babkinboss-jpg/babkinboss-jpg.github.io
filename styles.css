@@ -588,3 +588,18 @@ body:not(.home) .contentgrid{gap:12px}
     transform:none!important;
   }
 }
+/* Official MAX app icon, from max.ru (not an improvised letter M).
+   Preserve existing header spacing on mobile and desktop. */
+.sitehead .headerSocial .socialMax{
+  background:transparent!important;
+  padding:0!important;
+  border-radius:24%;
+  overflow:hidden;
+}
+.sitehead .headerSocial .socialMax img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:24%;
+}
