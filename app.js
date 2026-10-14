@@ -103,6 +103,10 @@
     const target=event.target;
     const trigger=target instanceof Element?target.closest('a.phoneTrigger'):null;
     if(!trigger)return;
+    // Switching from another call button should reposition, not toggle closed.
+    if(anchor&&anchor!==trigger&&pop.classList.contains('show')){
+      pop.classList.remove('show');
+    }
     anchor=trigger;
     schedule();
   },true);
