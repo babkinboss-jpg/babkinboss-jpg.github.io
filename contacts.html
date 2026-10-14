@@ -1,4 +1,4 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#27374D"><title>Контакты — ФинКонтур</title><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=20261014-unified-onest-v5"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="stylesheet" href="site-brand.css?v=20261014-unified-onest-v5"><link rel="stylesheet" href="contacts-page.css?v=20261014-mobile-one-screen-v2"><style>
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#27374D"><title>Контакты — ФинКонтур</title><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=20261014-unified-onest-v5"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="stylesheet" href="site-brand.css?v=20261014-unified-onest-v5"><link rel="stylesheet" href="contacts-page.css?v=20261014-unified-contacts-v3"><style>
 .phonePopover{display:none;position:fixed;right:92px;bottom:28px;z-index:70;background:#fff;border:1px solid rgba(38,63,92,.12);box-shadow:0 16px 40px rgba(32,56,79,.18);border-radius:16px;padding:14px 18px;min-width:210px;color:#20384f}
 .phonePopover.show{display:block}.phonePopover span{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#7890a3;font-weight:800;margin-bottom:3px}.phonePopover strong{font-size:18px}
 @media(max-width:900px){.phonePopover{display:none!important}}
@@ -11,14 +11,33 @@
     <div class="wrap">
       <div class="contacts-intro">
         <h1 id="contacts-title">Контакты</h1>
-        <p>Свяжитесь с компанией «ФинКонтур» удобным способом — по телефону, в мессенджере или по электронной почте.</p>
       </div>
       <div class="contacts-grid" aria-label="Способы связи">
-      <article class="contacts-channel"><h2>Телефон для звонков</h2><a href="tel:+79668877812">8 (966) 88-77-812</a><p>Для звонков и консультаций.</p></article>
-      <article class="contacts-channel"><h2>WhatsApp</h2><a href="https://wa.me/79992325313" target="_blank" rel="noopener noreferrer">8 (999) 232-53-13 <span aria-hidden="true">↗</span></a><p>Напишите нам в WhatsApp.</p></article>
-      <article class="contacts-channel" id="telegram"><h2>Telegram</h2><a href="https://t.me/FKontur" target="_blank" rel="noopener noreferrer">@FKontur <span aria-hidden="true">↗</span></a><p>Свяжитесь с нами в Telegram.</p></article>
-      <article class="contacts-channel" id="max"><h2>MAX</h2><strong>8 (999) 232-53-13</strong><p>Найдите нас по номеру телефона.</p></article>
-      <article class="contacts-channel contacts-channel--email"><h2>Электронная почта</h2><a href="mailto:info@fkontur.ru">info@fkontur.ru</a><p>Для заявок и деловой переписки.</p></article>
+        <article class="contacts-channel contacts-channel--phone">
+          <h2>Телефон</h2>
+          <a href="tel:+79668877812">8 (966) 88-77-812</a>
+        </article>
+        <article class="contacts-channel contacts-channel--messengers">
+          <h2>Мессенджеры</h2>
+          <div class="contacts-messenger-list">
+            <div class="contacts-messenger" id="whatsapp">
+              <span>WhatsApp</span>
+              <a href="https://wa.me/79992325313" target="_blank" rel="noopener noreferrer">8 (999) 232-53-13 <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="contacts-messenger" id="telegram">
+              <span>Telegram</span>
+              <a href="https://t.me/FKontur" target="_blank" rel="noopener noreferrer">@FKontur <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="contacts-messenger" id="max">
+              <span>MAX</span>
+              <strong>8 (999) 232-53-13</strong>
+            </div>
+          </div>
+        </article>
+        <article class="contacts-channel contacts-channel--email">
+          <h2>Почта</h2>
+          <a href="mailto:info@fkontur.ru">info@fkontur.ru</a>
+        </article>
       </div>
     </div>
   </section>
