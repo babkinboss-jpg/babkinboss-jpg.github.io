@@ -607,3 +607,17 @@ body:not(.home) .contentgrid{gap:12px}
 .sitehead .headerSocial .socialTelegram svg{
   transform:translate(-0.8px,-0.8px);
 }
+
+/* Subtle visual separation between the messenger group and Consultation. */
+@media(min-width:1061px){
+  .sitehead .headerConsult{margin-left:12px}
+}
+@media(min-width:901px) and (max-width:1060px){
+  .sitehead .headerConsult{margin-left:8px}
+}
+@media(min-width:431px) and (max-width:900px){
+  .sitehead .headerConsult{margin-left:6px}
+}
+@media(min-width:351px) and (max-width:430px){
+  .sitehead .headerConsult{margin-left:3px}
+}
