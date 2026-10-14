@@ -633,3 +633,7 @@ body:not(.home) .contentgrid{gap:12px}
 @media(min-width:351px) and (max-width:430px){
   .sitehead .headerConsult{margin-left:3px}
 }
+
+/* Brighter photo on financial solutions page, keeping headings legible */
+.pagehero-photo[style*='--pagehero-overlay']{background-image:var(--pagehero-overlay),var(--pagehero-image)}
+@media(max-width:900px){.pagehero-photo[style*='--pagehero-mobile-overlay']{background-image:var(--pagehero-mobile-overlay),var(--pagehero-image)}}
