@@ -68,6 +68,32 @@ body.blog-page .magazine-dialog__body .magazine-dialog__note{font-size:12px;colo
  body.blog-page .magazine-dialog__body{padding:24px 22px 32px}
 }
 @media(prefers-reduced-motion:reduce){body.blog-page .magazine-card{transition:none}}
+
+/* Blog editorial typography: keep article headlines smaller than section headings. */
+body.blog-page .magazine-card h2{
+  font-size:clamp(17px,1.43vw,19px)!important;
+  line-height:1.22!important;
+  letter-spacing:-.025em!important;
+  font-weight:700;
+}
+body.blog-page .magazine-masthead h1{
+  font-size:clamp(34px,3.3vw,43px)!important;
+  line-height:1.07!important;
+}
+body.blog-page .magazine-dialog h2{
+  font-size:clamp(28px,3.3vw,38px)!important;
+  line-height:1.14!important;
+}
+@media(min-width:901px) and (max-height:670px){
+ body.blog-page .magazine-card h2{font-size:16px!important}
+ body.blog-page .magazine-masthead h1{font-size:34px!important}
+}
+@media(max-width:620px){
+ body.blog-page .magazine-card h2{font-size:19px!important}
+ body.blog-page .magazine-masthead h1{font-size:34px!important}
+ body.blog-page .magazine-dialog h2{font-size:29px!important}
+}
+
 </style></head><body class="blog-page" id="top"><header class="sitehead"><div class="wrap nav"><a class="brand" href="index.html"><svg viewBox="720 500 480 580" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
 <polygon fill="currentColor" points="1060.65 694.48 861.02 694.56 861.02 734.54 942.59 734.47 942.67 843.71 861.1 843.78 861.1 883.69 1060.73 883.62 1060.73 843.71 981.06 843.71 980.98 734.47 1060.73 734.47 1060.65 694.48"/>
 <polygon fill="currentColor" points="1148.38 997.5 1147.62 543.05 1109 543.13 1109.15 618.08 848.63 618.54 848.71 657.16 1109.23 656.7 1109.38 769.97 1014.28 770.12 1014.36 808.74 1109.45 808.59 1109.76 997.57 847.87 998.03 847.95 1036.64 1148.6 1036.11 1148.53 997.5 1148.38 997.5"/>
