@@ -378,3 +378,19 @@ body.contacts-page .contacts-messenger strong{
   body.contacts-page .contacts-intro{margin-bottom:10px}
   body.contacts-page .contacts-messenger{padding:4px 0}
 }
+
+
+/* Desktop contacts: three cards together, aligned to the left. */
+@media(min-width:901px){
+  body.contacts-page .contacts-grid{
+    width:max-content;
+    max-width:100%;
+    grid-template-columns:235px 370px 220px;
+    justify-content:start;
+    gap:12px;
+  }
+  body.contacts-page .contacts-channel{
+    min-width:0;
+    box-sizing:border-box;
+  }
+}
